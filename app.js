@@ -88,7 +88,7 @@ document.getElementById("submitBtn").addEventListener("click", function () {
     errorElement.textContent = "Uploading image...";
     errorElement.style.display = "block";
 
-    fetch("https://f9a8-113-22-195-215.ngrok-free.app/upload-handler", {
+    fetch("https://8716-113-22-195-215.ngrok-free.app/upload-handler", {
         method: "POST",
         body: uploadData,
     })
@@ -105,7 +105,7 @@ document.getElementById("submitBtn").addEventListener("click", function () {
 
             errorElement.textContent = "Classifying image...";
 
-            return fetch("https://f9a8-113-22-195-215.ngrok-free.app/classify_image", {
+            return fetch("https://8716-113-22-195-215.ngrok-free.app/classify_image", {
                 method: "POST",
                 body: classifyData,
             });
