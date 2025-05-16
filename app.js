@@ -47,6 +47,9 @@ document.getElementById("link-classify-disease").addEventListener("click", funct
 document.getElementById("link-classify-age").addEventListener("click", function (e) {
     currentMode = "age";
     document.getElementById("prediction-type-header").textContent = "Predicted Age";
+    document.getElementById("model_1").textContent = "CNN";
+    document.getElementById("model_2").textContent = "Nasnet";
+    document.getElementById("model_3").textContent = "-";
     clearTable();
 });
 
@@ -131,6 +134,12 @@ document.getElementById("submitBtn").addEventListener("click", function () {
                 document.getElementById("confidence_2").textContent = data.predictions.resnet50.confidence;
                 document.getElementById("label_3").textContent = data.predictions.efficient_net.label;
                 document.getElementById("confidence_3").textContent = data.predictions.efficient_net.confidence;
+            }
+
+            if (currentMode === "age") {
+                document.getElementById("label_1").textContent = data.predictions.cnn.label;
+
+                document.getElementById("label_2").textContent = data.predictions.nasnet.label;
             }
 
             errorElement.style.display = "none";
